@@ -1,0 +1,24 @@
+{
+    "usuarios": [{
+        "id" : 1,
+        "name" : "Pepe",
+        "last_name" : "Juarez",
+        "number" : "4425874456",
+        "email" : "pepe@user.mx",
+        "address" : "Av de las Ciencias"
+    }, {
+        "id" : 2,
+        "name" : "Fernando",
+        "last_name" : "Ramirez",
+        "number" : "4425854352",
+        "email" : "fer@user.mx",
+        "address" : "Av de las Ciencias"
+    }, {
+        "id" : 3,
+        "name" : "Maria",
+        "last_name" : "Hernandez",
+        "number" : "4425998352",
+        "email" : "maria@user.mx",
+        "address" : "Av de las Ciencias"
+    }]
+}
