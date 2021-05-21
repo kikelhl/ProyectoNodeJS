@@ -2,8 +2,22 @@ const express = require('express');
 const usuarios = express.Router();
 const db = require('../config/database');
 
-usuarios.post("/", (req, res, next) => {
-    return res.status(200).json(req.body);
+usuarios.post("/", async (req, res, next) => {
+    const {name, last_name, number, email, address } = req.body;
+    
+    if (name && last_name && number && email && address) {
+        let query = "INSERT INTO users(name, last_name, number, email, address)";
+        query += `VALUES ('${name}','${last_name}','${number}','${email}','${address}');`
+
+        const rows = await db.query(query);
+
+        if (rows.affectedRows == 1) {
+            return res.status(201).json({ code: 201, message: "Usuario insertado correctamente" });
+        }
+
+        return res.status(500).json({ code: 500, message: "Ocurrió un error" });
+    }
+    return res.status(500).json({ code: 500, message: "Campos incompletos" });
 });
 
 usuarios.get('/', async(req, res, next) => {
