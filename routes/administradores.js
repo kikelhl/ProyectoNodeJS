@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const administradores = express.Router();
 const db = require('../config/database');
 
-administradores.post("/", async (req, res, next) => {
+administradores.post("/signin", async (req, res, next) => {
     const { admin_name, admin_email, admin_password } = req.body;
 
     if (admin_name && admin_email && admin_password) {
