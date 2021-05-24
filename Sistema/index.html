@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
-    <script type="text/javascript" src="./js/login.js"></script>
+    <script type="text/javascript" src="./js/indexFront.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Login</title>
 </head>
 <body>
@@ -14,9 +15,10 @@
             <form  class="registro-form">
                 <h1>Registro</h1>
                 <br>
-                <input id="rUsuario" type="text" placeholder="Usuario">
+                <input id="rUsuario" type="text" placeholder="Nombre">
+                <input id="rEmail" type="email" placeholder="E-mail">
                 <input id="rPassword" type="password" placeholder="Contraseña">
-                <input id="rEmail" type="email" placeholder="email">
+                
                 <br>
                 <button type="button" class="btn-primary" onclick="registrar()"> Registar </button>
                     <p class="message">¿Ya estás registrado? 
@@ -28,8 +30,8 @@
             <form  class="login-form">
                 <h1>Inicia Sesión</h1>
                 <br>
-                <input id="lUsuario" type="text" placeholder="Usuario">
-                <input id="lPassword" type="password" placeholder="Contrasena">
+                <input id="lUsuario" type="text" placeholder="E-mail">
+                <input id="lPassword" type="password" placeholder="Contraseña">
                 <br>
                     <button type="button" class="btn-secondary" onclick="login()"> Login </button>
                     <p class="message">¿Aún no estás registrado? <a href="#">Regístrate aquí</a></p>

@@ -51,11 +51,9 @@ body{
     transition: 0.5s;
     margin-top: 15px;
 }
-
 .form button:hover, .form button:active{
     background: green;
     border: none;
-
 }
 .form .message{
     margin: 15px 0 0;
