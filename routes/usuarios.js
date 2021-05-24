@@ -72,6 +72,7 @@ usuarios.patch('/:id([0-9]{1,3})', async (req, res, next) => {
 usuarios.get('/', async(req, res, next) => {
     const usr = await db.query("SELECT * FROM users");
     return res.status(200).json({code: 200, message: usr });
+    
 });
 
 usuarios.get('/:id([0-9]{1,3})', async (req, res, next) => {
