@@ -1,0 +1,70 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-image: url(../img/picture.jpeg);
+    background-size: 205vh;  
+    font-family: serif;  
+}
+.login-page{
+    width: 400px;
+    padding: 10% 0 0 ;
+    margin: auto;
+}
+.login-page{
+    position: relative;
+    z-index: 1;
+    background: black;
+    max-width: 360px;
+    padding: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    opacity: 0.85;
+    border-radius: 10px;
+    margin-top: 25vh;
+
+}
+.login-page h1{
+    color: whitesmoke;
+}
+.form input{
+    outline: none;
+    background: #f2f2f2; 
+    width: 90%;
+    border: 0;
+    margin: 15px;
+    padding: 15px ;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.form button {
+    text-transform: uppercase;
+    outline: 0;
+    background: orange;
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.form button:hover, .form button:active{
+    background: green;
+    border: none;
+
+}
+.form .message{
+    margin: 15px 0 0;
+    color: #fff;
+    font-size:12px;
+}
+.form .message a {
+    color: orange;
+    text-decoration: none;
+}
+.registro-form{
+    display: none;
+}

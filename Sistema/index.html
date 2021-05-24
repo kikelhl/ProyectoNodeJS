@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script type="text/javascript" src="./js/login.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+            <form  class="registro-form">
+                <h1>Registro</h1>
+                <br>
+                <input id="rUsuario" type="text" placeholder="Usuario">
+                <input id="rPassword" type="password" placeholder="Contrasena">
+                <input id="rEmail" type="email" placeholder="email">
+                <br>
+                <button type="button" class="btn-primary" onclick="registrar()"> Registar </button>
+                    <p class="message">Ya estas registrado? 
+                        <a id="msj" href="#">
+                            Login
+                        </a>
+                    </p>
+            </form>
+            <form  class="login-form">
+                <h1>Inicia Sesion</h1>
+                <br>
+                <input id="lUsuario" type="text" placeholder="Usuario">
+                <input id="lPassword" type="password" placeholder="Contrasena">
+                <br>
+                    <button type="button" class="btn-secondary" onclick="login()"> Login </button>
+                    <p class="message">Aun no estas registrado? <a href="#">Registrate aqui</a></p>
+            </form>
+        </div>
+    
+    </div>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $('.message a').click(function()
+        {
+            $('form').animate({height:"toggle", oppacity:"toggle"}, "slow");
+        })
+    </script>
+</body>
+</html>
