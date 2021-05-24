@@ -2,7 +2,6 @@
 function login(){
     var usuario= document.getElementById('lUsuario').value;
     var pass= document.getElementById('lPassword').value;
-    
     alert("usuario> " + usuario);
 
 }
