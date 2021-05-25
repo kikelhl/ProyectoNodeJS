@@ -17,8 +17,17 @@ function login(){
     }).then(function(res){
         console.log(res.data);
         if(res.data.code===200){
-            localStorage.setItem("token", res.data.message);
-            window.location.href="usuarios.html"
+            if (res.data.message == "Usuario Y/O contraseña incorrectos")
+            {
+                document.getElementById('lUsuario').value = "";
+                document.getElementById('lPassword').value = "";
+                alert("Usuario Y/O contraseña incorrectos");
+            }
+            else 
+            {
+                localStorage.setItem("token", res.data.message);
+                window.location.href="usuarios.html"
+            }
         }
         else{
             alert("Usuario y/o contraseña incorrectos");
