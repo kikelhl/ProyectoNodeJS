@@ -92,13 +92,12 @@ function displayUsuarios(usuario){
     contenido.innerHTML += `
     <tr>
         <td scope="col"></td>
-        <td scope="col"colspan="2"> <input type="text" id="nombreBuscar" placeholder="Buscar..." > </th>
-        <td scope="col"> <button class="btn-incredible" style="background:blue; margin-top:1px;" id="cambios"  onclick='buscar()'> Buscar</button></th>
+        <td scope="col"colspan="2"> <input type="text" id="nombreBuscar"  placeholder="Buscar..." > </th>
+        <td scope="col"> <button class="btn-incredible"  style="background:blue; margin-top:1px;" id="cambios" onclick='buscar()'> Buscar</button></th>
         <td scope="col"> </th>
         <td scope="col">  </th>
         <td scope="col"> </th>
-        <td scope="col"  > </th>
-        
+        <td scope="col"  > </th>   
     </tr>
         `
 }
@@ -112,7 +111,6 @@ function eliminar(id){
     axios.delete(url+ "/usuarios/" + id, headers)
     .then(function(res){
         console.log(res);
-
     }).catch(function(err){
         console.log(err);
     })

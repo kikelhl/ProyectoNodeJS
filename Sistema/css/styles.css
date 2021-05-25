@@ -160,8 +160,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ab12eb",endCo
     background-image: url('../img/search.png');
     background-size: 22px;
   }
-
   #nombreBuscar:focus{
     width: 100%;
-   
+    outline: none;
+    border: 5px solid rgb(166, 243, 173);
   }
