@@ -89,7 +89,24 @@ function displayUsuarios(usuario){
             </tr>
         </table>
         `
+
     }
+    contenido.innerHTML += `
+    <tr>
+        <td scope="col"></td>
+        <td scope="col"> <input type="text" id="nombreBuscar" placeholder="Nombre" > </th>
+        <td scope="col"> <button class="btn-incredible" style="background:blue" id="cambios"  onclick='buscar()'> Buscar</button></th>
+        <td scope="col"> </th>
+        <td scope="col">  </th>
+        <td scope="col"> </th>
+        <td scope="col"  colspan="2"> </th>
+        
+    </tr>
+        `
+}
+function buscar(){
+    nombre= document.getElementById("nombreBuscar").value;
+    alert(nombre);
 }
 
 function eliminar(id){
