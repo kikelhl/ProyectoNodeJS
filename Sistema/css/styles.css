@@ -20,6 +20,14 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ab12eb",endCo
     padding: 10% 0 0 ;
     margin: auto;
 }
+
+
+#center{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
 .login-page{
     position: relative;
     z-index: 1;

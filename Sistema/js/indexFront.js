@@ -35,7 +35,7 @@ function login(){
         }
     }).catch(function(err){
         console.log(err);
-        alert("FATAL ERROR! x_X \n Contacte a su proveedor de servicio...");
+        alert("Campos incompletos");
     })
 }
 
