@@ -1,26 +1,11 @@
-
-window.onload=init;
-
 var url= "http://localhost:3000"
 var headers={}
 
-function init(){
-    if(localStorage.getItem("token")){
-        token=localStorage.getItem("token");
-        headers={
-            headers:{
-                'Authorization': "bearer " + localStorage.getItem("token")
-            }
-        }
-        obtenerDatos();
-    }
-    else{
-        window.location.href="index.html"
-    }
-}
 function login(){
+    
     var usuario= document.getElementById('lUsuario').value;
     var pass= document.getElementById('lPassword').value;
+
     axios({
         method: 'post',
         url: url +'/administradores/login',
@@ -31,7 +16,6 @@ function login(){
         
     }).then(function(res){
         console.log(res.data);
-        alert("Sesion Iniciada" + res.data);
         if(res.data.code===200){
             localStorage.setItem("token", res.data.message);
             window.location.href="usuarios.html"
@@ -41,7 +25,7 @@ function login(){
         }
     }).catch(function(err){
         console.log(err);
-        alert("FATAL ERROR! x_X ");
+        alert("FATAL ERROR! x_X \n Contacte a su proveedor de servicio...");
     })
     
 }
@@ -62,10 +46,10 @@ function registrar(){
         
     }).then(function(res){
         console.log(res);
-        alert("Registrao");
+        alert("Registro exitoso");
     }).catch(function(err){
         console.log(err);
-        alert("Aqui 2");
+        alert("Error en el registro");
     })
 
     document.getElementById('rUsuario').value="";
@@ -74,7 +58,6 @@ function registrar(){
 }
 
 function obtenerDatos(){
-    alert(headers);
     console.log(headers);
     axios.get(url+ "/usuarios", headers)
     .then(function(res){
@@ -90,17 +73,19 @@ function displayUsuarios(usuario){
     var body=document.querySelector("table");
     contenido.innerHTML='';
     for(let valor of usuario){
-        console.log(valor.name);
         contenido.innerHTML += `
-        <table id=customers>    
-            <tr>
-                <td> ${valor.id} </td>
+        <table id=usuarios>   
+            <tr class="clickableRow">
+                <td > ${valor.id}</td>
                 <td> ${valor.name} </td>
                 <td> ${valor.last_name} </td>
                 <td>${valor.number} </td>
                 <td> ${valor.email} </td>
                 <td> ${valor.address} </td>
-                <td> <button onclick='eliminar(${valor.id})'> Eliminar</button </td> 
+                <td> <button  class="btn-incredible" style="background:Orange" onclick='editar(${valor.id},"${valor.name}","${valor.last_name}", ${valor.number}, "${valor.email}", "${valor.address}")'> Editar</button>
+                </td> 
+                <td><button type="button" class="btn-incredible" onclick='eliminar(${valor.id})' style="background:red"> Eliminar </button> </td>
+                
             </tr>
         </table>
         `
@@ -108,7 +93,6 @@ function displayUsuarios(usuario){
 }
 
 function eliminar(id){
-    alert("Eliminando usuario : " + id + "\n url: " + url );
     console.log(headers);
 
     axios.delete(url+ "/usuarios/" + id, headers)
@@ -118,4 +102,51 @@ function eliminar(id){
     }).catch(function(err){
         console.log(err);
     })
+    location.reload();
 }
+
+function agregar(){
+    var nombre = document.getElementById("nombre").value;
+    var apellido = document.getElementById("apellido").value;
+    var telefono = document.getElementById("telefono").value;
+    var email = document.getElementById("email").value;
+    var direccion = document.getElementById("direccion").value;
+    var data ={name: nombre, last_name: apellido, number: telefono, email:email, address:direccion};
+    axios.post(url+ "/usuarios/", data, headers)
+    .then(function(res){
+        console.log(res);
+    }).catch(function(err){
+        console.log(err);
+    })
+    location.reload();
+}
+function editar(id, nombre, apellido, telefono, email, direccion){
+    console.log(nombre);
+    contenido.innerHTML='';
+    telefono= telefono.toString();
+    document.getElementById("nombre").value= nombre;
+    document.getElementById("apellido").value=apellido;
+    document.getElementById("telefono").value = telefono;
+    document.getElementById("email").value = email;
+    document.getElementById("direccion").value = direccion;
+
+    document.getElementById("cambios").innerHTML='Actualizar';
+    document.getElementById("cambios").onclick=function(){
+        nombre = document.getElementById("nombre").value;
+        apellido = document.getElementById("apellido").value;
+        telefono = document.getElementById("telefono").value;
+        email = document.getElementById("email").value;
+        direccion = document.getElementById("direccion").value;
+
+    console.log(nombre);
+        var data ={name: nombre, last_name:apellido, number: telefono, email:email, address:direccion};
+        axios.put(url+ "/usuarios/"+id, data, headers)
+        .then(function(res){
+            console.log(res);
+        }).catch(function(err){
+            console.log(err);
+        })
+        location.reload();
+    };
+}
+ 

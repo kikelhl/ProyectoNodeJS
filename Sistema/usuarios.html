@@ -10,21 +10,53 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
+    <script>
+        window.onload=init;
+    function init(){
+        if(localStorage.getItem("token")){
+            token=localStorage.getItem("token");
+            headers={
+                headers:{
+                    'Authorization': "bearer " + localStorage.getItem("token")
+                }
+            }
+            obtenerDatos();
+        }
+        else{
+           window.location.href="index.html"
+        }
+    
+    }
+    </script>   
     <div class="users-page"> 
         <div >
+            <h1 style="color: white;">Empleados</h1>
+            <br> <br>
+
             <table class="table" id="usuarios">
                 <thead>
                     <tr>
                         <th scope="col"> # </th>
                         <th scope="col"> Nombre </th>
-                        <th scope="col"> Last_name </th>
-                        <th scope="col"> Number </th>
+                        <th scope="col"> Apellido </th>
+                        <th scope="col"> Teléfono </th>
                         <th scope="col"> E-mail </th>
                         <th scope="col"> Dirección </th>
-                        <th scope="col"> Eliminar </th>
+                        <th colspan="2" scope="col"> Opciones </th>
+                        
                     </tr>
                 </thead>
+                <tr>
+                    <td scope="col"> ID </td>
+                    <td scope="col"> <input type="text" id="nombre" placeholder="Nombre" > </th>
+                    <td scope="col">  <input type="text" id="apellido" placeholder="Apellido" > </th>
+                    <td scope="col">  <input type="text" id="telefono" placeholder="Teléfono" > </th>
+                    <td scope="col">  <input type="text" id="email" placeholder="E-mail" ></th>
+                    <td scope="col">  <input type="text" id="direccion" placeholder="Dirección" > </th>
+                    <td scope="col" colspan="2">  <button class="btn-incredible" style="background:green" id="cambios"  onclick='agregar()'> Agregar</button>  </th>
+                </tr>
                 <tbody id="contenido">
+                    
                     <tr>
                         <td scope="col"> # </td>
                         <td scope="col"> Nombre </th>
@@ -32,7 +64,8 @@
                         <td scope="col"> Number </th>
                         <td scope="col"> E-mail </th>
                         <td scope="col"> Address </th>
-                        <td scope="col"> Eliminar </th>
+                        <td scope="col"> Opciones </th>
+                        
                     </tr>
                 </tbody>
             </table>

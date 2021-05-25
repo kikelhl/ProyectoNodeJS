@@ -15,12 +15,11 @@ body{
 .login-page{
     position: relative;
     z-index: 1;
-    background: black;
+    background:rgba(0,0,0, 0.75);
     max-width: 360px;
     padding: 0 auto 100px;
     padding: 45px;
     text-align: center;
-    opacity: 0.85;
     border-radius: 10px;
     margin-top: 25vh;
 
@@ -55,6 +54,26 @@ body{
     background: green;
     border: none;
 }
+
+.btn-incredible{
+    text-transform: uppercase;
+    outline: 0;
+    background: orange;
+    width: 90%;
+    border: none;
+    padding: 15px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-top: 15px;
+}
+.btn-incredible button:hover, .btn-incredible button:active{
+    background: green;
+    border: none;
+}
+
+
 .form .message{
     margin: 15px 0 0;
     color: #fff;
@@ -67,10 +86,11 @@ body{
 .registro-form{
     display: none;
 }
+
 .users-page{
     position: relative;
     z-index: 1;
-    background: gray;
+    background: rgba(0,0,0,0.75);
     width: 90%;
     padding: 0 auto 100px;
     padding: 45px;
@@ -78,7 +98,6 @@ body{
     border-radius: 10px;
     margin-top: 5vh;
     margin-left: 2.5%;
-
 }
 .users-page::after{
     background: tomato;
@@ -89,24 +108,30 @@ body{
     border-collapse: collapse;
     width: 100%;
     background: whitesmoke;
-    border-radius: 15px;
     border:none;
-  }
+    border-radius: 15px;
+}
   
   #usuarios td, #usuarios th {
-    
     padding: 8px;
-
   }
   
   #usuarios tr:nth-child(even){background-color: #f2f2f2;}
   
-  #usuarios tr:hover {background-color: #d4cdc3;}
+  #usuarios tr:hover {
+    background-color: #d4cdc3; 
+}
   
   #usuarios th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: #4CAF50;
+    background-color: orange;
     color: white;
+
+  }
+
+  .clickableRow1{
+      background: orangered;
+      color: orangered;
   }

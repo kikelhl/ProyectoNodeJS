@@ -36,8 +36,9 @@ usuarios.put('/:id([0-9]{1,3})', async (req, res, next) => {
     const {name, last_name, number, email, address } = req.body;
 
     if (name && last_name && number && email && address) {
-        let query = `UPDATE users SET name= '${name}', last_name= '${last_name}', number= '${email}', address='${address}' `;
+        let query = `UPDATE users SET name= '${name}', last_name= '${last_name}', number= ${number}, email= '${email}', address='${address}' `;
         query += `WHERE id = ${req.params.id};`;
+        console.log(query);
 
         const rows = await db.query(query)
 
@@ -72,7 +73,7 @@ usuarios.patch('/:id([0-9]{1,3})', async (req, res, next) => {
 usuarios.get('/', async(req, res, next) => {
     const usr = await db.query("SELECT * FROM users");
     return res.status(200).json({code: 200, message: usr });
-    
+
 });
 
 usuarios.get('/:id([0-9]{1,3})', async (req, res, next) => {
