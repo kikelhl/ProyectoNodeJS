@@ -18,8 +18,17 @@ function login(){
         alert(res.data)
         console.log(res.data);
         if(res.data.code===200){
-            localStorage.setItem("token", res.data.message);
-            window.location.href="usuarios.html"
+            if (res.data.message == "Usuario Y/O contraseña incorrectos")
+            {
+                document.getElementById('lUsuario').value = "";
+                document.getElementById('lPassword').value = "";
+                alert("Usuario Y/O contraseña incorrectos");
+            }
+            else 
+            {
+                localStorage.setItem("token", res.data.message);
+                window.location.href="usuarios.html"
+            }
         }
         else{
             alert("Usuario y/o contraseña incorrectos");
@@ -94,7 +103,7 @@ function displayUsuarios(usuario){
     <tr>
         <td scope="col"></td>
         <td scope="col"colspan="2"> <input type="text" id="nombreBuscar"  placeholder="Buscar..." > </th>
-        <td scope="col"> <button class="btn-incredible"  style="background:blue; margin-top:1px;" id="cambios" onclick='buscar()'> Buscar</button></th>
+        <td scope="col"> <button class="btn-incredible"  style="background:blue; margin-top:1px;" id="busqueda" onclick='buscar()'> Buscar</button></th>
         <td scope="col"> </th>
         <td scope="col">  </th>
         <td scope="col"> </th>
@@ -107,7 +116,7 @@ function buscar(){
     nombre= document.getElementById("nombreBuscar").value;
 	if (nombre == "")
 	{
-		alert("Inserte el nombre para buscar");
+		window.location = "usuarios.html"
 	}
 	else
 	{
@@ -115,6 +124,10 @@ function buscar(){
 	    .then(function(res){
 		console.log(res);
         	displayUsuarios(res.data.message);
+		document.getElementById("busqueda").innerHTML = 'Regresar';
+		document.getElementById("busqueda").innerHTML = 'Regresar';
+		document.getElementById("busqueda").onClick = function(){window.location.href = "usuarios.html";};
+
 
 	    }).catch(function(err){
 		    alert("No econtrado");
