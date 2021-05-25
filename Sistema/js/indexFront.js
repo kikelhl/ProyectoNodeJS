@@ -102,10 +102,28 @@ function displayUsuarios(usuario){
     </tr>
         `
 }
+
 function buscar(){
     nombre= document.getElementById("nombreBuscar").value;
-    alert(nombre);
-}
+	if (nombre == "")
+	{
+		alert("Inserte el nombre para buscar");
+	}
+	else
+	{
+	    axios.get(url+ "/usuarios/"+nombre, headers)
+	    .then(function(res){
+		console.log(res);
+        	displayUsuarios(res.data.message);
+
+	    }).catch(function(err){
+		    alert("No econtrado");
+		console.log(err);
+    		})
+
+	}
+
+
 function eliminar(id){
     console.log(headers);
 
