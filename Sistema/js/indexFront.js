@@ -122,6 +122,7 @@ function buscar(){
     		})
 
 	}
+}
 
 
 function eliminar(id){
