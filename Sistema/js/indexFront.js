@@ -27,7 +27,6 @@ function login(){
         console.log(err);
         alert("FATAL ERROR! x_X \n Contacte a su proveedor de servicio...");
     })
-    
 }
 
 function registrar(){
@@ -89,17 +88,16 @@ function displayUsuarios(usuario){
             </tr>
         </table>
         `
-
     }
     contenido.innerHTML += `
     <tr>
         <td scope="col"></td>
-        <td scope="col"> <input type="text" id="nombreBuscar" placeholder="Nombre" > </th>
-        <td scope="col"> <button class="btn-incredible" style="background:blue" id="cambios"  onclick='buscar()'> Buscar</button></th>
+        <td scope="col"colspan="2"> <input type="text" id="nombreBuscar" placeholder="Buscar..." > </th>
+        <td scope="col"> <button class="btn-incredible" style="background:blue; margin-top:1px;" id="cambios"  onclick='buscar()'> Buscar</button></th>
         <td scope="col"> </th>
         <td scope="col">  </th>
         <td scope="col"> </th>
-        <td scope="col"  colspan="2"> </th>
+        <td scope="col"  > </th>
         
     </tr>
         `
@@ -124,7 +122,6 @@ function buscar(){
 
 	}
 }
-
 function eliminar(id){
     console.log(headers);
 
@@ -137,7 +134,6 @@ function eliminar(id){
     })
     location.reload();
 }
-
 function agregar(){
     var nombre = document.getElementById("nombre").value;
     var apellido = document.getElementById("apellido").value;
@@ -181,5 +177,9 @@ function editar(id, nombre, apellido, telefono, email, direccion){
         })
         location.reload();
     };
+<<<<<<< HEAD
 }
  
+=======
+}
+>>>>>>> 4ba27c92f3a591d5f7ad740e6b023001117ca94f
