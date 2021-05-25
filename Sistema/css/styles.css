@@ -130,6 +130,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ab12eb",endCo
   
   #usuarios td, #usuarios th {
     padding: 8px;
+    width:auto;
   }
   
   #usuarios tr:nth-child(even){background-color: #f2f2f2;}
