@@ -15,7 +15,6 @@ function login(){
         }
         
     }).then(function(res){
-        console.log(res.data);
         if(res.data.code===200){
             if (res.data.message == "Usuario Y/O contraseña incorrectos")
             {
@@ -34,7 +33,7 @@ function login(){
         }
     }).catch(function(err){
         console.log(err);
-        alert("FATAL ERROR! x_X \n Contacte a su proveedor de servicio...");
+        alert("Campos incompletos");
     })
 }
 
