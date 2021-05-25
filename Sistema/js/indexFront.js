@@ -93,7 +93,7 @@ function displayUsuarios(usuario){
     <tr>
         <td scope="col"></td>
         <td scope="col"colspan="2"> <input type="text" id="nombreBuscar"  placeholder="Buscar..." > </th>
-        <td scope="col"> <button class="btn-incredible"  style="background:blue; margin-top:1px;" id="cambios" onclick='buscar()'> Buscar</button></th>
+        <td scope="col"> <button class="btn-incredible"  style="background:blue; margin-top:1px;" id="busqueda" onclick='buscar()'> Buscar</button></th>
         <td scope="col"> </th>
         <td scope="col">  </th>
         <td scope="col"> </th>
@@ -106,7 +106,7 @@ function buscar(){
     nombre= document.getElementById("nombreBuscar").value;
 	if (nombre == "")
 	{
-		alert("Inserte el nombre para buscar");
+		window.location = "usuarios.html"
 	}
 	else
 	{
@@ -114,6 +114,10 @@ function buscar(){
 	    .then(function(res){
 		console.log(res);
         	displayUsuarios(res.data.message);
+		document.getElementById("busqueda").innerHTML = 'Regresar';
+		document.getElementById("busqueda").innerHTML = 'Regresar';
+		document.getElementById("busqueda").onClick = function(){window.location.href = "usuarios.html";};
+
 
 	    }).catch(function(err){
 		    alert("No econtrado");
