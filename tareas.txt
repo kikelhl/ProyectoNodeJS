@@ -1,3 +1,0 @@
-1.Interfaz HTML5 --> ALONSO
-2.Conectar interfaz a backend -->ALONSO
-3.Desplegar a produccion -->EMILIO
