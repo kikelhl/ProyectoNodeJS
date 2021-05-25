@@ -1,6 +1,7 @@
 *{
     margin: 0px;
     padding: 0px;
+    width:100%;
 }
 body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
@@ -166,3 +167,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ab12eb",endCo
     outline: none;
     border: 5px solid rgb(166, 243, 173);
   }
+.padre{
+}
+

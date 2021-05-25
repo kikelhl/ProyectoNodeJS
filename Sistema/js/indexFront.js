@@ -129,6 +129,7 @@ function buscar(){
 
 	    }).catch(function(err){
 		    alert("No econtrado");
+		document.getElementById("nombreBuscar").value = '';
 		console.log(err);
     		})
 
