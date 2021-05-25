@@ -177,9 +177,7 @@ function editar(id, nombre, apellido, telefono, email, direccion){
         })
         location.reload();
     };
-<<<<<<< HEAD
 }
  
 =======
 }
->>>>>>> 4ba27c92f3a591d5f7ad740e6b023001117ca94f
