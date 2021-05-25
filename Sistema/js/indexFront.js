@@ -15,7 +15,6 @@ function login(){
         }
         
     }).then(function(res){
-        alert(res.data)
         console.log(res.data);
         if(res.data.code===200){
             if (res.data.message == "Usuario Y/O contraseña incorrectos")
