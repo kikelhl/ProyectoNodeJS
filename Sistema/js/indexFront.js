@@ -15,6 +15,7 @@ function login(){
         }
         
     }).then(function(res){
+        alert(res.data)
         console.log(res.data);
         if(res.data.code===200){
             localStorage.setItem("token", res.data.message);
@@ -119,7 +120,6 @@ function buscar(){
 		    alert("No econtrado");
 		console.log(err);
     		})
-
 	}
 }
 
@@ -161,6 +161,7 @@ function editar(id, nombre, apellido, telefono, email, direccion){
     document.getElementById("direccion").value = direccion;
 
     document.getElementById("cambios").innerHTML='Actualizar';
+    
     document.getElementById("cambios").onclick=function(){
         nombre = document.getElementById("nombre").value;
         apellido = document.getElementById("apellido").value;
