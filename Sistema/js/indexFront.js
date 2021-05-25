@@ -104,23 +104,7 @@ function displayUsuarios(usuario){
 }
 function buscar(){
     nombre= document.getElementById("nombreBuscar").value;
-	if (nombre == "")
-	{
-		alert("Inserte el nombre para buscar");
-	}
-	else
-	{
-	    axios.get(url+ "/usuarios/"+nombre, headers)
-	    .then(function(res){
-		console.log(res);
-        	displayUsuarios(res.data.message);
-
-	    }).catch(function(err){
-		    alert("No econtrado");
-		console.log(err);
-    		})
-
-	}
+    alert(nombre);
 }
 function eliminar(id){
     console.log(headers);
@@ -177,7 +161,4 @@ function editar(id, nombre, apellido, telefono, email, direccion){
         })
         location.reload();
     };
-}
- 
-=======
 }
