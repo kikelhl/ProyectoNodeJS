@@ -33,10 +33,10 @@ administradores.post("/login", async (req, res, next) => {
             return res.status(200).json({code: 200, message: token});
         }
         else {
-            return res.status(401).json({code: 401, message: "Usuario Y/O contraseña incorrectos"});
+            return res.status(200).json({code: 200, message: "Usuario Y/O contraseña incorrectos"});
         }
     }
-    return res.status(401).json({code: 500, message: "Campos incompletos"});    
+    return res.status(500).json({code: 500, message: "Campos incompletos"});    
 });
 
 administradores.get("/", async (req, res, next) => {

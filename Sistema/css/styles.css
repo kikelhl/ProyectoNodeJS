@@ -1,0 +1,180 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    width:100%;
+}
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+    
+}
+html{
+    width: 100%;
+    height: 100%;
+    background: rgb(171,18,235);
+background: -moz-radial-gradient(circle, rgba(171,18,235,1) 0%, rgba(114,26,166,1) 27%, rgba(86,30,132,1) 32%, rgba(65,33,107,1) 38%, rgba(50,35,89,1) 42%, rgba(43,36,80,1) 45%, rgba(38,36,74,1) 51%, rgba(38,36,74,1) 57%, rgba(38,36,74,1) 64%, rgba(32,30,69,1) 100%);
+background: -webkit-radial-gradient(circle, rgba(171,18,235,1) 0%, rgba(114,26,166,1) 27%, rgba(86,30,132,1) 32%, rgba(65,33,107,1) 38%, rgba(50,35,89,1) 42%, rgba(43,36,80,1) 45%, rgba(38,36,74,1) 51%, rgba(38,36,74,1) 57%, rgba(38,36,74,1) 64%, rgba(32,30,69,1) 100%);
+background: radial-gradient(circle, rgba(171,18,235,1) 0%, rgba(114,26,166,1) 27%, rgba(86,30,132,1) 32%, rgba(65,33,107,1) 38%, rgba(50,35,89,1) 42%, rgba(43,36,80,1) 45%, rgba(38,36,74,1) 51%, rgba(38,36,74,1) 57%, rgba(38,36,74,1) 64%, rgba(32,30,69,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ab12eb",endColorstr="#201e45",GradientType=1);
+}
+.login-page{
+    width: 400px;
+    padding: 10% 0 0 ;
+    margin: auto;
+}
+
+
+#center{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.login-page{
+    position: relative;
+    z-index: 1;
+    background:rgba(0,0,0, 0.75);
+    max-width: 100vh;
+    padding: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 17vh;
+
+}
+.login-page h1{
+    color: whitesmoke;
+}
+.form input{
+    outline: none;
+    background: #f2f2f2; 
+    width: 90%;
+    border: 0;
+    margin: 15px;
+    padding: 15px ;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.form button {
+    text-transform: uppercase;
+    outline: 0;
+    background: orange;
+    width: 90%;
+    border: none;
+    padding: 15px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-top: 15px;
+}
+.form button:hover, .form button:active{
+    background: green;
+    border: none;
+}
+
+.btn-incredible{
+    text-transform: uppercase;
+    outline: 0;
+    background: orange;
+    width: 90%;
+    border: none;
+    padding: 15px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-top: 15px;
+}
+.btn-incredible button:hover, .btn-incredible button:active{
+    background: green;
+    border: none;
+}
+
+
+.form .message{
+    margin: 15px 0 0;
+    color: #fff;
+    font-size:12px;
+}
+.form .message a {
+    color: orange;
+    text-decoration: none;
+}
+.registro-form{
+    display: none;
+}
+
+.users-page{
+    position: relative;
+    z-index: 1;
+    background: rgba(0,0,0,0.75);
+    width: 180vh;
+    padding: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 5vh;
+    margin-left: 2.5%;
+}
+.users-page::after{
+    background: tomato;
+
+}
+
+#usuarios{
+    border-collapse: collapse;
+    width: 100%;
+    background: whitesmoke;
+    border:none;
+    border-radius: 15px;
+}
+  
+  #usuarios td, #usuarios th {
+    padding: 8px;
+    width:auto;
+  }
+  
+  #usuarios tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #usuarios tr:hover {
+    background-color: #d4cdc3; 
+}
+  
+  #usuarios th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: orange;
+    color: white;
+
+  }
+
+  .clickableRow1{
+      background: orangered;
+      color: orangered;
+  }
+
+  #nombreBuscar{
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: whitesmoke;
+    background:whitesmoke;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+    margin-left: 0;
+    background-image: url('../img/search.png');
+    background-size: 22px;
+  }
+  #nombreBuscar:focus{
+    width: 100%;
+    outline: none;
+    border: 5px solid rgb(166, 243, 173);
+  }
+.padre{
+}
+
